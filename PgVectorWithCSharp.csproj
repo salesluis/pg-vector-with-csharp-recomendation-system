@@ -28,6 +28,8 @@
 
   <ItemGroup>
     <None Remove="Models\Recomendation\**" />
+    <None Remove="Properties\launchSettings.json" />
+    <None Include="src\Properties\launchSettings.json" />
   </ItemGroup>
 
   <ItemGroup>
