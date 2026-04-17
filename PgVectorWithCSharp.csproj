@@ -30,4 +30,8 @@
     <None Remove="Models\Recomendation\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+
 </Project>
