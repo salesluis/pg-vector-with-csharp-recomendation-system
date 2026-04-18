@@ -10,8 +10,7 @@ A aplicação gerencia produtos (ex.: cafés) e gera recomendações baseadas em
 - [Como Rodar o Projeto](#como-rodar-o-projeto)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Endpoints da API](#endpoints-da-api)
-
-## Pré-requisitos
+- [Contribuição](#Contribuição)
 
 Para rodar o projeto, você precisa dos seguintes itens instalados e configurados:
 
@@ -91,8 +90,3 @@ Esses endpoints demonstram um fluxo completo: criar produtos, semear embeddings,
 ## Contribuição
 
 Sinta-se à vontade para abrir issues ou pull requests. Para mudanças significativas, abra uma issue primeiro para discutir.
-
-## Licença
-
-Este projeto é de código aberto. Consulte o arquivo LICENSE para detalhes.</content>
-<filePath>/var/home/salesluis/Developer/Studies/PgVectorWithCSharp/README.md
