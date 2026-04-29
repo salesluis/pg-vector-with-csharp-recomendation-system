@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OllamaSharp;
 using PgVectorWithCSharp.Data;
+using PgVectorWithCSharp.UseCases;
 
 namespace PgVectorWithCSharp;
 
@@ -16,6 +17,7 @@ public static class DependencyInjection
             options.UseNpgsql(connectionString, o => o.UseVector());
         });
 
+        builder.Services.AddTransient<AgentRecomendationUseCase>();
         builder.Services.AddTransient<OllamaApiClient>(x => new OllamaApiClient(
             uriString: "http://localhost:11434",
             defaultModel: "mxbai-embed-large"
