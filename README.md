@@ -10,17 +10,25 @@ A aplicação gerencia produtos (ex.: cafés) e gera recomendações baseadas em
 - [Como Rodar o Projeto](#como-rodar-o-projeto)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Endpoints da API](#endpoints-da-api)
+<<<<<<< HEAD
 - [Contribuição](#contribuição)
 - [Licença](#licença)
 
 ## Pré-requisitos
+=======
+- [Contribuição](#Contribuição)
+>>>>>>> 5ae5e86442d68468a9ac77e56165522bb1cdef1a
 
 Para rodar o projeto, você precisa dos seguintes itens instalados e configurados:
 
 1. **Ollama**:
    - Instale o Ollama (disponível em [ollama.ai](https://ollama.ai)). É uma ferramenta para rodar modelos de IA localmente.
    - Após instalar, baixe o modelo de embeddings especificado no código: `mxbai-embed-large` (um modelo de embeddings otimizado para tarefas de similaridade).
+<<<<<<< HEAD
      - Comando: `ollama pull mxbai-embed-large`.
+=======
+     - rode: `ollama pull mxbai-embed-large`.
+>>>>>>> 5ae5e86442d68468a9ac77e56165522bb1cdef1a
    - Certifique-se de que o Ollama esteja rodando na porta padrão (11434), pois o código se conecta a `http://localhost:11434`.
 
 2. **Modelo para Geração de Embeddings**:
@@ -93,8 +101,11 @@ Esses endpoints demonstram um fluxo completo: criar produtos, semear embeddings,
 ## Contribuição
 
 Sinta-se à vontade para abrir issues ou pull requests. Para mudanças significativas, abra uma issue primeiro para discutir.
+<<<<<<< HEAD
 
 ## Licença
 
 Este projeto é de código aberto. Consulte o arquivo LICENSE para detalhes.</content>
 <filePath>/var/home/salesluis/Developer/Studies/PgVectorWithCSharp/README.md
+=======
+>>>>>>> 5ae5e86442d68468a9ac77e56165522bb1cdef1a
