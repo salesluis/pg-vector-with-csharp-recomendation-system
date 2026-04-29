@@ -8,7 +8,8 @@ public static class DependencyInjection
 {
     public static void MapServices(this WebApplicationBuilder builder)
     {
-        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+                               ?? throw new InvalidOperationException("No connection string");
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
         {
