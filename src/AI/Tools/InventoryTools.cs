@@ -4,6 +4,7 @@ using Microsoft.SemanticKernel.Embeddings;
 using OllamaSharp;
 using Pgvector;
 using Pgvector.EntityFrameworkCore;
+using PgVectorWithCSharp.DTO;
 using PgVectorWithCSharp.Infra.Data;
 using PgVectorWithCSharp.Models;
 
