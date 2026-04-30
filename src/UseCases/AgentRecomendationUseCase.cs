@@ -6,6 +6,7 @@ using OllamaSharp;
 using Pgvector;
 using Pgvector.EntityFrameworkCore;
 using PgVectorWithCSharp.Agents;
+using PgVectorWithCSharp.Agents.Abstractions;
 using PgVectorWithCSharp.Data;
 using PgVectorWithCSharp.DTO;
 
@@ -13,7 +14,8 @@ namespace PgVectorWithCSharp.UseCases;
 
 public class AgentRecomendationUseCase(
     [FromServices]OllamaApiClient ollamaClient,
-    [FromServices] ApplicationDbContext db
+    [FromServices] ApplicationDbContext db,
+    IAgentFactory agentFactory
     )
 {
     public async Task<RecomendationResponseDto?> ExecuteAsync(QuestionDto question)
@@ -55,7 +57,7 @@ public class AgentRecomendationUseCase(
                 {question.Prompt}
                 """;
 
-            var agent = AgentFactory.GetAgent("recomendation");
+            var agent = agentFactory.GetAgent("recomendation");
             var raw = await agent!.RunAsync(prompt);
 
             var response = JsonSerializer.Deserialize<RecomendationResponseDto>(raw.Text, new JsonSerializerOptions

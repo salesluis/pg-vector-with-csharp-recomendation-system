@@ -4,18 +4,22 @@ using PgVectorWithCSharp.Agents.Catalog;
 
 namespace PgVectorWithCSharp.Agents;
 
-public static class AgentFactory
+public class AgentFactory : IAgentFactory
 {
-    private static readonly Dictionary<string, AgentCreator> _agents = new()
+    private  readonly Dictionary<string, AgentCreator> _agents = new()
     {
-        ["recomendation"] = new RecomendationAgent()
+        ["router"] = new RouterAgent(),
+        ["recomendation"] = new RecomendationAgent(),
+        ["branch"]         = new BranchAgent(),  
+        ["inventory"]      = new InventoryAgent(), 
     };
 
-    public static ChatClientAgent? GetAgent(string agentName)
+    public ChatClientAgent? GetAgent(string agentName)
     {
         if (!_agents.TryGetValue(agentName, out var agent))
             throw new InvalidOperationException(@$"O agente {agentName}, não foi encontrado.
                                                  Verifique se digitou o nome correto ou se foi criado o agente");
         return agent!.CreateAgent();
     }
+    
 }

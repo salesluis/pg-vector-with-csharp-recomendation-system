@@ -19,7 +19,7 @@ public class RecomendationAgent : AgentCreator
                                               SEMPRE responda APENAS com um JSON válido, sem texto adicional, 
                                               sem markdown, sem explicações. Exatamente neste formato:
                                               {
-                                                  "summary": "resumo em linguagem natural da recomendação que o usuário pediu",
+                                                  "summary": "resumo em linguagem natural da recomendação que o usuário pediu e mostrando o porque a escolha dele é boa",
                                                   "items": [
                                                       {
                                                           "title": "título do item",
