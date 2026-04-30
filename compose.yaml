@@ -11,7 +11,7 @@
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./Init:/docker-entrypoint-initdb.d
+      - ./src/Infra/Init:/docker-entrypoint-initdb.d
     
 volumes:
   pgdata:

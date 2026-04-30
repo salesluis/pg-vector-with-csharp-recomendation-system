@@ -1,15 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using OllamaSharp;
-using PgVectorWithCSharp.Agents;
-using PgVectorWithCSharp.Agents.Abstractions;
-using PgVectorWithCSharp.Data;
+using PgVectorWithCSharp.AI;
+using PgVectorWithCSharp.AI.Abstractions;
+using PgVectorWithCSharp.Infra.Data;
 using PgVectorWithCSharp.UseCases;
 
 namespace PgVectorWithCSharp;
 
 public static class DependencyInjection
 {
-    public static void MapServices(this WebApplicationBuilder builder)
+    public static void AddDb(this WebApplicationBuilder builder)
     {
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
                                ?? throw new InvalidOperationException("No connection string");
@@ -18,12 +18,17 @@ public static class DependencyInjection
         {
             options.UseNpgsql(connectionString, o => o.UseVector());
         });
-        builder.Services.AddScoped<IAgentFactory, AgentFactory>();
-        builder.Services.AddTransient<AgentRecomendationUseCase>();
+       
+    }
+
+    public static void AddAiAgentService(this WebApplicationBuilder builder)
+    {
         builder.Services.AddTransient<OllamaApiClient>(x => new OllamaApiClient(
             uriString: "http://localhost:11434",
             defaultModel: "mxbai-embed-large"
         ));
-
+        
+        builder.Services.AddTransient<HandlePromptUseCase>();
     }
+    
 }

@@ -1,10 +1,10 @@
 using Microsoft.Extensions.AI;
-using PgVectorWithCSharp.Agents.Abstractions;
+using PgVectorWithCSharp.AI.Abstractions;
 
-namespace PgVectorWithCSharp.Agents.Catalog;
+namespace PgVectorWithCSharp.AI.Agents;
 
 // Infrastructure/AI/Catalog/FallbackAgent.cs
-public class FallbackAgent : AgentCreator
+public class GenericAgent : AgentCreator
 {
     protected override string Uri => "http://localhost:11434";
     protected override string Model => "phi3:latest";

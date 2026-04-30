@@ -3,7 +3,8 @@ using PgVectorWithCSharp.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.MapServices();
+builder.AddDb();
+builder.AddAiAgentService();
 
 var app = builder.Build();
 app.MapProductRoute();

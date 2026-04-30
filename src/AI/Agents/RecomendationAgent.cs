@@ -1,7 +1,7 @@
 using Microsoft.Extensions.AI;
-using PgVectorWithCSharp.Agents.Abstractions;
+using PgVectorWithCSharp.AI.Abstractions;
 
-namespace PgVectorWithCSharp.Agents.Catalog;
+namespace PgVectorWithCSharp.AI.Agents;
 
 public class RecomendationAgent : AgentCreator
 {
@@ -29,6 +29,9 @@ public class RecomendationAgent : AgentCreator
                                                       }
                                                   ]
                                               }
+                                              
+                                              IMPORTANTE: Sua resposta DEVE ser SOMENTE o JSON especificado.
+                                              Não adicione texto antes ou depois. Não use markdown. Não use ```json.
                                               """";
     protected override AITool[] Tools => [];
 }

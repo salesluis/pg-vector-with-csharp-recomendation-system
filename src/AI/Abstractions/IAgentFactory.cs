@@ -1,6 +1,6 @@
 using Microsoft.Agents.AI;
 
-namespace PgVectorWithCSharp.Agents.Abstractions;
+namespace PgVectorWithCSharp.AI.Abstractions;
 
 public interface IAgentFactory
 {
