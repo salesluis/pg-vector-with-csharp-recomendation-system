@@ -29,6 +29,9 @@ public class RecomendationAgent : AgentCreator
                                                       }
                                                   ]
                                               }
+                                              
+                                              IMPORTANTE: Sua resposta DEVE ser SOMENTE o JSON especificado.
+                                              Não adicione texto antes ou depois. Não use markdown. Não use ```json.
                                               """";
     protected override AITool[] Tools => [];
 }

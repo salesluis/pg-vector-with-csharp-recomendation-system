@@ -32,6 +32,22 @@ public class InventoryAgent : AgentCreator
                                               3. Se nenhuma retornar resultado, informe o usuário
                                               
                                               Nunca invente produtos, preços ou quantidades.
+                                              
+                                              Quando receber dados de uma tool, responda APENAS com JSON válido, 
+                                              sem markdown, sem texto adicional, exatamente neste formato:
+                                              {
+                                                  "summary": "resumo em linguagem natural",
+                                                  "items": [
+                                                      {
+                                                          "name": "nome do produto",
+                                                          "price": 0.0,
+                                                          "stock": 0
+                                                      }
+                                                  ]
+                                              }
+                                              
+                                              IMPORTANTE: Sua resposta DEVE ser SOMENTE o JSON especificado.
+                                              Não adicione texto antes ou depois. Não use markdown. Não use ```json.
                                               """;
 
     protected override AIFunction[] Tools => 
