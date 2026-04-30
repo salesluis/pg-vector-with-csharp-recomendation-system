@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PgVectorWithCSharp.Models;
 
-namespace PgVectorWithCSharp.Data;
+namespace PgVectorWithCSharp.Infra.Data;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
 {
@@ -30,8 +30,11 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
             entity.Property(x => x.Id).HasColumnName("id").UseIdentityAlwaysColumn();
             entity.Property(e => e.Title).HasColumnName("title");
             entity.Property(e => e.Category).HasColumnName("category");
+            entity.Property(e => e.Inventory).HasColumnName("inventory");
             entity.Property(e => e.Summary).HasColumnName("summary");
             entity.Property(e => e.Description).HasColumnName("description");
+            entity.Property(e => e.Embedding).HasColumnName("embedding")
+                .HasColumnType("vector(1024)");
         });
     }
 }

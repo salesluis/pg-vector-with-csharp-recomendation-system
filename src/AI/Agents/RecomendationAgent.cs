@@ -1,7 +1,7 @@
 using Microsoft.Extensions.AI;
-using PgVectorWithCSharp.Agents.Abstractions;
+using PgVectorWithCSharp.AI.Abstractions;
 
-namespace PgVectorWithCSharp.Agents.Catalog;
+namespace PgVectorWithCSharp.AI.Agents;
 
 public class RecomendationAgent : AgentCreator
 {

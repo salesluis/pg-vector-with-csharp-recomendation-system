@@ -2,8 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.SemanticKernel.Embeddings;
 using OllamaSharp;
 using Pgvector;
-using PgVectorWithCSharp.Data;
 using PgVectorWithCSharp.DTO;
+using PgVectorWithCSharp.Infra.Data;
 using PgVectorWithCSharp.Models;
 
 namespace PgVectorWithCSharp.Routes;

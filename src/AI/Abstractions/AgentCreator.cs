@@ -1,8 +1,8 @@
-using OllamaSharp;
-using Microsoft.Extensions.AI;
 using Microsoft.Agents.AI;
+using Microsoft.Extensions.AI;
+using OllamaSharp;
 
-namespace PgVectorWithCSharp.Agents.Abstractions;
+namespace PgVectorWithCSharp.AI.Abstractions;
 
 public abstract class AgentCreator
 {

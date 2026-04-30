@@ -1,20 +1,19 @@
 using Microsoft.Agents.AI;
-using PgVectorWithCSharp.Agents.Abstractions;
-using PgVectorWithCSharp.DTO;
+using PgVectorWithCSharp.AI;
 
 namespace PgVectorWithCSharp.UseCases;
 
-public class HandlePromptUseCase(IAgentFactory agentFactory)
+public class HandlePromptUseCase()
 {
     public async Task<AgentResponse> ExecuteAsync(string prompt)
     {
-        var router = agentFactory.GetAgent("router");
+        var router = AgentFactory.GetAgent("router");
         var intent = (await router!.RunAsync(prompt))
             .ToString()
             .Trim()
             .ToLower();
         
-        var especialist = agentFactory.GetAgent(intent);
+        var especialist = AgentFactory.GetAgent(intent);
 
         return await especialist!.RunAsync(prompt);
     }

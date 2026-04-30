@@ -1,7 +1,7 @@
 using Microsoft.Extensions.AI;
-using PgVectorWithCSharp.Agents.Abstractions;
+using PgVectorWithCSharp.AI.Abstractions;
 
-namespace PgVectorWithCSharp.Agents.Catalog;
+namespace PgVectorWithCSharp.AI.Agents;
 
 public class RouterAgent : AgentCreator
 {
@@ -13,13 +13,13 @@ public class RouterAgent : AgentCreator
                                               sem texto adicional, sem explicações:
 
                                               - recomendation  (quando o usuário pede sugestões ou recomendações)
-                                              - branch          (quando o usuário menciona cidade, filial ou localização)
-                                              - inventory       (quando o usuário pergunta sobre estoque ou preço)
+                                              - inventory      (quando o usuário pergunta sobre estoque ou preço)
+                                              - generic        (quando o usuário fala algo fora do escopo das outras)
 
                                               Exemplos:
                                               "me indique um cafe" → recomendation
-                                              "tem filial em tal cidade?" → branch
                                               "qual o preço do produto X?" → inventory
+                                              Caso seja algo mais genérico como um simples "oi" -> generic
                                               """;
 
     protected override AIFunction[] Tools => [];
